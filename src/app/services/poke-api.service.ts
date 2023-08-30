@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Pokemon } from '../models/pokemon';
 import { Observable, retry, catchError, throwError } from 'rxjs';
+import { PokemonDetails } from '../models/pokemon-details';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,19 @@ export class PokeApiService {
 
   // get all pokemons
   getPokemons(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=10000')
+    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=5')
       .pipe(
         retry(2),
         catchError(this.handleError))
+  }
+
+  // get pokemonDetails by url
+  getPokemonsDetails(urlPokemon: string): Observable<PokemonDetails> {
+    return this.httpClient.get<PokemonDetails>(urlPokemon)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
 
   handleError(error: HttpErrorResponse) {
