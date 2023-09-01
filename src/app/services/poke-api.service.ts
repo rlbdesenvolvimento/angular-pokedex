@@ -21,7 +21,7 @@ export class PokeApiService {
 
   // get all pokemons
   getPokemons(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=10000')
+    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=151')
       .pipe(
         retry(2),
         catchError(this.handleError))

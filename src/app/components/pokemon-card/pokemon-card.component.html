@@ -1,4 +1,14 @@
-<div id="card">
-    <img [src]="pokemonDetails.sprites.other.dream_world.front_default"/>
-    <h1>{{ pokemonDetails.name }}</h1>
+<div class="card">
+    <div class="card-inner">
+        <div class="card-front {{pokemonDetails.types[0].type.name}}">
+            <img class="img-pokemon" [src]="pokemonDetails.sprites.other.dream_world.front_default">
+            <h2>{{ pokemonDetails.name }}</h2>
+            <h2>{{ pokemonDetails.types[0].type.name }}</h2>
+        </div>
+        <div class="card-back {{pokemonDetails.types[0].type.name}}">
+            <h2>Electric Type</h2>
+            <p>Height: 0.4m</p>
+            <p>Weight: 6.0kg</p>
+        </div>
+    </div>
 </div>
