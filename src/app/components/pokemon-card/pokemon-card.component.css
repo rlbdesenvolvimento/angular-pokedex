@@ -1,146 +1,55 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: red;
+h2{
+    color: white;
 }
 
-h2 {
-    color: black;
-}
 
 .card {
-    perspective: 1000px;
-}
-
-.card-inner {
     width: 300px;
-    height: 420px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
+    height: 500px;
+    border: 8px solid #ddd;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow: visible;
 }
 
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 10px;
+.div-image{
+    height: 300px;
+    width: 300px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
 }
 
-.card-front {
-    border-width: 5px;
-    border-style: solid;
-
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    color: white;
+.div-types{
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 10px;
 }
 
-.card-back {
-    border-width: 5px;
-    border-style: solid;
+.icon{
+    padding: 5px;
+    border-radius: 10%;
     
-    transform: rotateY(180deg);
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
 }
 
-.img-pokemon {
-    max-width: 100%;
-    height: 250px;
+.card-image {
+    margin: 20px;
+    width: 100%;
+    max-height: 250px;
+    max-width: 270px;
+    object-fit: fill;
+    transform-origin: center;
+    transition: transform 0.5s ease;
+    float: right;
+    height: auto;
 }
 
-
-.fire {
-    border-color: #F08030;
-}
-
-.normal {
-    border-color: #A8A878;
-}
-
-.fighting {
-    border-color: #C03028;
-}
-
-.flying {
-    border-color: #A890F0;
-}
-
-.poison {
-    border-color: #A040A0;
-}
-
-.ground {
-    border-color: #E0C068;
-}
-
-.rock {
-    border-color: #B8A038;
-}
-
-.bug {
-    border-color: #A8B820;
-}
-
-.ghost {
-    border-color: #705898;
-}
-
-.steel {
-    border-color: #B8B8D0;
-}
-
-.water {
-    border-color: #6890F0;
-}
-
-.grass {
-    border-color: #78C850;
-}
-
-.electric {
-    border-color: #F8D030;
-}
-
-.psychic {
-    border-color: #F85888;
-}
-
-.ice {
-    border-color: #98D8D8;
-}
-
-.dragon {
-    border-color: #7038F8;
-}
-
-.dark {
-    border-color: #705848;
-}
-
-.fairy {
-    border-color: #EE99AC;
-}
-
-.unknown {
-    border-color: #68A090;
+.card:hover .card-image {
+    transform: scale(1.4);
 }

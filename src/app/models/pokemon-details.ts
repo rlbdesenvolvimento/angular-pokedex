@@ -1,3 +1,5 @@
+import { TypeEnum } from "./enums/type-enum"
+
 export interface PokemonDetails {
     abilities: Ability[]
     base_experience: number

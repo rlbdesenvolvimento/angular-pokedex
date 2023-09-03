@@ -1,14 +1,9 @@
-<div class="card">
-    <div class="card-inner">
-        <div class="card-front {{pokemonDetails.types[0].type.name}}">
-            <img class="img-pokemon" [src]="pokemonDetails.sprites.other.dream_world.front_default">
-            <h2>{{ pokemonDetails.name }}</h2>
-            <h2>{{ pokemonDetails.types[0].type.name }}</h2>
-        </div>
-        <div class="card-back {{pokemonDetails.types[0].type.name}}">
-            <h2>Electric Type</h2>
-            <p>Height: 0.4m</p>
-            <p>Weight: 6.0kg</p>
-        </div>
+<div class="card {{pokemonDetails.types[0].type.name}}" [ngStyle]="setPokemonCardColor(type1, type2)">
+    <div class="div-image">
+        <img class="card-image" [src]="pokemonDetails.sprites.other.dream_world.front_default">
+    </div>
+    <h2 class="title">{{ pokemonDetails.name }}</h2>
+    <div class="div-types">
+        <h2 *ngFor="let type of pokemonDetails.types" class="icon" [ngStyle]="setPokemonIconColor(type.type.name)" >{{ type.type.name }}</h2>
     </div>
 </div>
