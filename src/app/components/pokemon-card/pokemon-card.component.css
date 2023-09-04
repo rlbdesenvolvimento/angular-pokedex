@@ -48,6 +48,8 @@ h2{
     transition: transform 0.5s ease;
     float: right;
     height: auto;
+
+    /* filter: brightness(.0); */
 }
 
 .card:hover .card-image {
