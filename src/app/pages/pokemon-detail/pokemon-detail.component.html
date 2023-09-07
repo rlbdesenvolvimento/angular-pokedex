@@ -1,4 +1,11 @@
 <div class="div-main">
     <h2>{{ pokemonDetails.name }}</h2>
-    <app-pokemon-stats [id] = pokemonDetails.id />
+
+    <div class="pokemonStatus">
+        <app-pokemon-data [pokemonDetails]="pokemonDetails"></app-pokemon-data>
+        <img [src]="pokemonDetails.sprites.other['official-artwork'].front_default" [alt]="pokemonDetails.name">
+        <app-pokemon-status [pokemonDetails]="pokemonDetails"></app-pokemon-status>
+    </div>
+    
+
 </div>

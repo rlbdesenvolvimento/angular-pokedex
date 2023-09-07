@@ -1,7 +1,9 @@
-import { Component, Input, Renderer2 } from '@angular/core';
+import { Component, Input, Renderer2, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { TypeEnum, TypeEnumIndex } from 'src/app/models/enums/type-enum';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonDetails } from 'src/app/models/pokemon-details';
+import { PokemonDetailComponent } from 'src/app/pages/pokemon-detail/pokemon-detail.component';
 import { PokeApiService } from 'src/app/services/poke-api.service';
 
 
@@ -20,7 +22,9 @@ export class PokemonCardComponent {
   type1: string = '';
   type2: string = '';
 
-  constructor(private pokeApiService: PokeApiService, private renderer: Renderer2) { }
+  private dialog = inject(MatDialog);
+  private pokeApiService = inject(PokeApiService);
+  private renderer = inject(Renderer2);
 
   ngOnInit(): void {
     this.pokeApiService.getPokemonsDetails(this.pokemon.url).subscribe((data: any) => {
@@ -53,6 +57,14 @@ export class PokemonCardComponent {
     } else {
       return { background: 'white' };
     }
+  }
+
+  onClickPokemon() {
+    let dialogRef = this.dialog.open(PokemonDetailComponent, {
+      height: '100vh',
+      width: '100vw',
+      data: this.pokemonDetails,
+    });
   }
 
   setPokemonIconColor(t: string): any {
