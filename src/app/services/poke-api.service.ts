@@ -9,7 +9,7 @@ import { PokemonDetails } from '../models/pokemon-details';
 })
 export class PokeApiService {
 
-  url = 'https://pokeapi.co/api/v2/'; // api rest fake
+  url = 'https://pokeapi.co/api/v2/';
 
   // inject HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -21,7 +21,7 @@ export class PokeApiService {
 
   // get all pokemons
   getPokemons(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=10000')
+    return this.httpClient.get<Pokemon[]>(this.url+'pokemon?limit=1010')
       .pipe(
         retry(2),
         catchError(this.handleError))
@@ -30,6 +30,14 @@ export class PokeApiService {
   // get pokemonDetails by url
   getPokemonsDetails(urlPokemon: string): Observable<PokemonDetails> {
     return this.httpClient.get<PokemonDetails>(urlPokemon)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  getPokemon(id: number): Observable<PokemonDetails> {
+    return this.httpClient.get<PokemonDetails>(this.url + 'pokemon/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)

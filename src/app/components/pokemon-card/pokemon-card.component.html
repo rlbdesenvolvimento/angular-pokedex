@@ -1,9 +1,14 @@
-<div class="card {{pokemonDetails.types[0].type.name}}" [ngStyle]="setPokemonCardColor(type1, type2)">
-    <div class="div-image">
-        <img class="card-image" [src]="pokemonDetails.sprites.other.dream_world.front_default">
+<a [routerLink]="['/pokemon-details', pokemonDetails.id]" class="link">
+    <div class="card {{pokemonDetails.types[0].type.name}}" [ngStyle]="setPokemonCardColor(type1, type2)">
+        <div class="div-image">
+            <img class="card-image" [src]="pokemonDetails.sprites.other['official-artwork'].front_default">
+        </div>
+        <div class="conteudo">
+            <h2 class="title"> #{{pokemonDetails.id}} - {{ pokemonDetails.name }}</h2>
+            <div class="div-types">
+                <h2 class="type" *ngFor="let type of pokemonDetails.types" class="icon"
+                    [ngStyle]="setPokemonIconColor(type.type.name)">{{ type.type.name }}</h2>
+            </div>
+        </div>
     </div>
-    <h2 class="title">{{ pokemonDetails.name }}</h2>
-    <div class="div-types">
-        <h2 *ngFor="let type of pokemonDetails.types" class="icon" [ngStyle]="setPokemonIconColor(type.type.name)" >{{ type.type.name }}</h2>
-    </div>
-</div>
+</a>

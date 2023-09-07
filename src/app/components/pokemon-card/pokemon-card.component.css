@@ -1,12 +1,14 @@
 h2{
     color: white;
+    text-transform: capitalize;
+    text-align: center;
 }
 
 
 .card {
     width: 300px;
     height: 500px;
-    border: 8px solid #ddd;
+    /* border: 8px solid #ddd; */
     border-radius: 40px;
     position: relative;
     overflow: hidden;
@@ -29,7 +31,12 @@ h2{
     padding: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
+}
+
+.div-types > h2{
+    text-transform: uppercase;
 }
 
 .icon{
@@ -49,7 +56,7 @@ h2{
     float: right;
     height: auto;
 
-    /* filter: brightness(.0); */
+    /* filter: brightness(.8); */ 
 }
 
 .card:hover .card-image {

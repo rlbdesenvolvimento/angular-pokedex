@@ -36,6 +36,7 @@ export class PokemonCardComponent {
     const elemento = this.renderer.selectRootElement('card-front');
     console.log(elemento);
     this.renderer.addClass(elemento, this.pokemonDetails.types[0].type.name);
+
   }
 
   setPokemonCardColor(t1: string, t2: string): any {
@@ -44,7 +45,7 @@ export class PokemonCardComponent {
       const color1 = this.typeEnumIndex[t1];
       const color2 = this.typeEnumIndex[t2];
       const style = {
-        background: 'linear-gradient(' + color1 + '88, ' + color2 + '88)',
+        background: 'linear-gradient( ' + color1 + 'AA, ' + color2 + 'AA)',
         'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
         'border-color': color1,
       };

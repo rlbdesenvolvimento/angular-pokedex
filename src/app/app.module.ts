@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
+import { PokemonStatsComponent } from './pages/pokemon-detail/pokemon-stats/pokemon-stats.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HomeComponent,
     PokemonCardComponent,
     NavBarComponent,
-    QuizComponent
+    QuizComponent,
+    PokemonDetailComponent,
+    PokemonStatsComponent
   ],
   imports: [
     BrowserModule,
