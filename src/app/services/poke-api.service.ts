@@ -20,7 +20,7 @@ export class PokeApiService {
   }
 
   // get all pokemons
-  getPokemons(limit: number = 10, offset:number = 0): Observable<Pokemon[]> {
+  getPokemons(limit: number = 14, offset:number = 0): Observable<Pokemon[]> {
     return this.httpClient.get<Pokemon[]>(this.url+ `pokemon?limit=${limit}&offset=${offset}`)
       .pipe(
         retry(2),

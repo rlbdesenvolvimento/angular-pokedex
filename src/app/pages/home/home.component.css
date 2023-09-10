@@ -5,5 +5,11 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    background-image: URL('https://i.imgur.com/11bgHd8.jpg');
+    height: 89vh;
+    background-image: URL('https://cdn.wallpapersafari.com/60/82/3UicNR.jpg');
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
 }

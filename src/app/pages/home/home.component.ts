@@ -10,7 +10,7 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  rows: number = 10;
+  rows: number = 14;
   first: number = 0;
   totalRecords: number = 0;
 
