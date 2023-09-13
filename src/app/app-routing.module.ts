@@ -12,11 +12,12 @@ const routes: Routes = [
   },
   {
     path:'quiz',
-    component:QuizComponent
+    component:QuizComponent,
+    pathMatch: 'full'
   },
   {
     path:'pokemon-details/:id',
-    component:PokemonDetailComponent
+    component:PokemonDetailComponent,
   }
 ];
 

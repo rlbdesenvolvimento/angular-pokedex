@@ -9,11 +9,10 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
-import { PokemonDataComponent } from './pages/pokemon-detail/pokemon-data/pokemon-data.component';
-import { PokemonStatusComponent } from './pages/pokemon-detail/pokemon-status/pokemon-status.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -24,8 +23,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavBarComponent,
     QuizComponent,
     PokemonDetailComponent,
-    PokemonDataComponent,
-    PokemonStatusComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     PaginatorModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,22 @@
 .div-main{
   display: flex;
   flex-direction: column;
+}
+
+.div-data{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+}
+
+.pokemon-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pokemon-atributes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

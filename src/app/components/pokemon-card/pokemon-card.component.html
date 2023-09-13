@@ -1,4 +1,4 @@
-<a (click)="onClickPokemon()" class="link">
+<a [routerLink]="['pokemon-details', pokemonDetails.id]">
     <div class="card {{pokemonDetails.types[0].type.name}}" [ngStyle]="setPokemonCardColor(type1, type2)">
         <div class="div-image">
             <img class="card-image" [src]="pokemonDetails.sprites.other['official-artwork'].front_default">
