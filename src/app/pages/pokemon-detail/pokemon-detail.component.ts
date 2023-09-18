@@ -1,6 +1,6 @@
 import {Component, OnInit, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {PokemonDetails, Stat} from 'src/app/models/pokemon-details';
+import {PokemonDetails} from 'src/app/models/pokemon-details';
 import {PokeApiService} from 'src/app/services/poke-api.service';
 import {TypeEnum, TypeEnumIndex} from "../../models/enums/type-enum";
 
