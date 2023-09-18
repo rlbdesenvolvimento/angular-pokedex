@@ -36,6 +36,7 @@ export class PokemonDetailComponent implements OnInit {
           this.pokemonDetails = pokemonDetails;
           this.setPokemonData();
           this.calculateStats();
+          this.applyCss();
         });
     });
   }
@@ -135,4 +136,7 @@ export class PokemonDetailComponent implements OnInit {
     return this.typeEnumIndex[type];
   }
 
+  private applyCss() {
+
+  }
 }

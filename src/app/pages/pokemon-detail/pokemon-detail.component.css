@@ -20,3 +20,15 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.table{
+  margin-left: 5vH;
+  margin-right: 5vH;
+}
+.text-detail{
+  padding-right: 15px;
+}
+
+.text-stats{
+
+}
