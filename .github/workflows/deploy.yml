@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: [main]       # troque se estiver usando outra branch
+    branches: [master]       # troque se estiver usando outra branch
 
 permissions:
   contents: read           # ler o código
