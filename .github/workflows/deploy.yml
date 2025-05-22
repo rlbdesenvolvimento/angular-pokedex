@@ -1,0 +1,39 @@
+# .github/workflows/deploy.yml
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: [main]       # troque se estiver usando outra branch
+
+permissions:
+  contents: read           # ler o código
+  pages: write             # publicar no Pages
+  id-token: write          # OIDC exigido por deploy-pages
+
+env:
+  NODE_VERSION: 20         # escolha a LTS que seu projeto usa
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node + cache de dependências
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Descobre o nome do projeto Angular e gera o build
+      - name: Build Angular app
+        id: ng
+        run: |
+          # Nome do repositório (user/repo → repo)
+          REPO_NAME=${GITHUB_REPOSITORY#*/}
+          # Default project definido no angular.json
