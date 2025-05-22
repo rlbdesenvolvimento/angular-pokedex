@@ -1,1 +1,18 @@
-<p>quiz works!</p>
+<div class="quiz-container" *ngIf="!loading">
+  <h2>Quem é esse Pokémon?</h2>
+  <div class="pokemon-silhouette" *ngIf="pokemon">
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" [class.silhouette]="!revealed" alt="Quem é esse Pokémon?">
+  </div>
+  <div class="options" *ngIf="options.length === 4">
+    <button *ngFor="let option of options" (click)="selectOption(option)" [disabled]="revealed" [ngClass]="{'correct': revealed && option === answer, 'wrong': revealed && option !== answer && option === answer}">
+      {{ option | titlecase }}
+    </button>
+  </div>
+  <div class="result" *ngIf="revealed">
+    <p>Resposta: <b>{{ answer | titlecase }}</b></p>
+    <button (click)="nextQuiz()">Próximo</button>
+  </div>
+</div>
+<div *ngIf="loading">
+  <p>Carregando quiz...</p>
+</div>
