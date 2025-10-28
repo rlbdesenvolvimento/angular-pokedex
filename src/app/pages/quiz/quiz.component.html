@@ -4,12 +4,13 @@
     <img [src]="pokemon.sprites.other['official-artwork'].front_default" [class.silhouette]="!revealed" alt="Quem é esse Pokémon?">
   </div>
   <div class="options" *ngIf="options.length === 4">
-    <button *ngFor="let option of options" (click)="selectOption(option)" [disabled]="revealed" [ngClass]="{'correct': revealed && option === answer, 'wrong': revealed && option !== answer && option === answer}">
+    <button *ngFor="let option of options" (click)="selectOption(option)" [disabled]="revealed || loading" [ngClass]="{'correct': revealed && option === answer, 'wrong': revealed && option === selectedOption && option !== answer}">
       {{ option | titlecase }}
     </button>
   </div>
   <div class="result" *ngIf="revealed">
-    <p>Resposta: <b>{{ answer | titlecase }}</b></p>
+    <p *ngIf="selectedOption === answer">Você acertou! Resposta: <b>{{ answer | titlecase }}</b></p>
+    <p *ngIf="selectedOption !== answer">Você errou. Resposta correta: <b>{{ answer | titlecase }}</b></p>
     <button (click)="nextQuiz()">Próximo</button>
   </div>
 </div>
